@@ -15,7 +15,6 @@ class Solution:
         # Return: (dL_dw rounded to 5 decimals, dL_db rounded to 5 decimals)
         z = np.dot(x, w) + b
         y_hat = 1/(1+np.exp(-z))
-        loss = 0.5 * (y_hat - y)**2
         dL_dw = np.round((y_hat-y)*(y_hat)*(1-y_hat)*x,5)
         dL_db = np.round((y_hat-y)*(y_hat)*(1-y_hat),5)
         return (dL_dw,dL_db)
