@@ -12,8 +12,6 @@ class Solution:
             w,b = w - lr * grad[0], b - lr * grad[1]
         return (np.round(w,5), round(b,5))
         
-    def get_grad(self,X,y,y_pred): 
-        n = X.shape[0]
-        return (2/n * np.matmul(X.T,(y_pred-y))),(2/n * np.sum(y_pred-y))
+    def get_grad(self,X,y,y_pred):  return (2/X.shape[0] * np.matmul(X.T,(y_pred-y))),(2/X.shape[0] * np.sum(y_pred-y))
 
     def get_res(self,X,w,b): return np.matmul(X,w)+b
